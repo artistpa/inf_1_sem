@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+import numpy as np
+a = np.loadtxt('C:\\Users\\Павел\\Downloads\\x_y.txt')
+x=a[0]
+y=a[1]
+fig, ax = plt.subplots()
+#Write points
+ax.scatter(x, y)
+coefs=np.polyfit(x,y, 3)
+p=np.poly1d(coefs)
+ax.scatter(x,y)
+ax.plot(x, p(x), c='red')
+plt.show()
+def foo(x,a,b,c,d):
+    return a*x**3+b*x**2+c*x+d
+popt, _ = curve_fit(foo,x,y)
+print(popt)
+plt.show()

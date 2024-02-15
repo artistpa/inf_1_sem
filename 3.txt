@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main () {
+int Vv, Vm, L, K, N, dog, Vova, z;
+cin >> Vv >> Vm >> L >> K >> N;
+dog=0;
+Vova=L;
+z=L+K;
+Vv -= N;
+while (dog<Vova and Vova<z) {
+        if (N>0) {N -= 1;
+        Vv += 1;}
+        dog += Vm;
+        Vova += Vv;
+}
+if (dog >= Vova) N=0;
+cout << N;
+}
